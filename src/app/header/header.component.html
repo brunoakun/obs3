@@ -1,0 +1,13 @@
+<div class="container">
+  <span>TOTAL PRODUCTOS: {{(myCart$ | async)?.length}}</span>
+
+  <div class="list">
+    <div class="item-product" *ngFor="let product of (myCart$  | async), let i=index;">
+      <img [src]="product.images[0]" alt="">
+      <p>{{ product.title }}
+        <button (click)="borrar(i)">borrar</button>
+      </p>
+    </div>
+  </div>
+
+</div>
